@@ -10,7 +10,7 @@ public class Scripture
 
         foreach (string verse in text)
         {
-            _words.AddRange(verse.Split(' ').Select(w => new Word(w)));
+            _words.AddRange(verse.Split(" ").Select(w => new Word(w)));
         }
     }
 
