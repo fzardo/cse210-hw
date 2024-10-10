@@ -9,10 +9,20 @@ public class Customer
         _customerAdress = customerAddress;
     }
 
-    public (bool, string) UsaCustomer()
+    public bool UsaCustomer()
     {
         bool isUSA = _customerAdress.CountryChecker();
+        return isUSA;
+    }
+
+    public string CustomerAddress()
+    {
         string label = _customerAdress.FullAddress();
-        return (isUSA, label);
+        return label;
+    }
+
+    public string CustomerName()
+    {
+        return _customerName;
     }
 }

@@ -11,17 +11,31 @@ public class Order
 
     public float Subtotal()
     {
+        int fromUSA = 5;
+        int notfromUSA = 35;
+
         float subtotal = 0;
         for (int i = 0; i < _productsList.Count; i++)
         {
             subtotal += _productsList[i].GetProductTotalCost();
         }
+
+        if (_customer.UsaCustomer())
+        {
+            subtotal += fromUSA;
+        }
+        else
+        {
+            subtotal += notfromUSA;
+        }
+
         return subtotal;
     }
 
     public string PackingLabel()
     {
-        string packingLabel = "";
+        string packingLabel = $"{_customer.CustomerName()}\n";
+
         for (int i = 0; i < _productsList.Count; i++)
         {
             packingLabel += $"{_productsList[i].GetProductName()}\n";
@@ -31,6 +45,7 @@ public class Order
 
     public string ShippingLabel()
     {
-        string shippingLabel = _customer.UsaCustomer();
+        string shippingLabel = _customer.CustomerAddress();
+        return shippingLabel;
     }
 }
