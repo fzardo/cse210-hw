@@ -24,4 +24,9 @@ public class Product
         _productName = _productName + $" {_productQuantity}";
         return _productName;
     }
+
+    public string GetProductID()
+    {
+        return _productId.ToString();
+    }
 }

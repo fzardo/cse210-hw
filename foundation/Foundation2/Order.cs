@@ -38,14 +38,15 @@ public class Order
 
         for (int i = 0; i < _productsList.Count; i++)
         {
-            packingLabel += $"{_productsList[i].GetProductName()}\n";
+            packingLabel += $"{_productsList[i].GetProductName()} - {_productsList[i].GetProductID()}\n";
         }
         return packingLabel;
     }
 
     public string ShippingLabel()
     {
-        string shippingLabel = _customer.CustomerAddress();
+        string shippingLabel = _customer.CustomerName();
+        shippingLabel += $"{_customer.CustomerAddress()}";
         return shippingLabel;
     }
 }
