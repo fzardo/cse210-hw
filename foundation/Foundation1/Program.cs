@@ -48,7 +48,7 @@ class Program
             {
                 Console.WriteLine($"- {comment.GetUserName()}: {comment.GetComment()}");
             }
-            Console.WriteLine(); // Blank line for separation between videos
+            Console.WriteLine();
         }
     }
 }
