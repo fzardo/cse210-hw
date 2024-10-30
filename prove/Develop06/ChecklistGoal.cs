@@ -33,7 +33,7 @@ public class ChecklistGoal : Goal
 
     public override int GetPoints()
     {
-        return _points;
+        return IsComplete() ? _points + _bonus : _points;
     }
 
     public void SetAmountCompleted(string amountCompleted)
