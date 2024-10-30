@@ -12,7 +12,7 @@ class Program
         List<Activity> activities = new List<Activity> { running, cycling, swimming };
 
         // Displaying summaries for each activity
-        foreach (var activity in activities)
+        foreach (Activity activity in activities)
         {
             Console.WriteLine(activity.GetSummary());
         }
